@@ -8,4 +8,4 @@ This completed project is the result of the lab exercise **Reduce traffic with b
 
 ## Use the the Graph Explorer Web Tool
 
-The second part of this demo is to use the Graph Explorer web tool. Follow the steps in the lab exercise associated with this module.
+This demo is completed using the Graph Explorer web tool. Follow the steps in the lab exercise associated with this module.

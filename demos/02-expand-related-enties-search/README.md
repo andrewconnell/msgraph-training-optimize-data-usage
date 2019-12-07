@@ -5,7 +5,7 @@ This completed project is the result of the lab exercise **Expand related entiti
 ## Prerequisites
 
 - Office 365 Tenancy
-- [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download)
+- [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download)
 - [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Run this Completed Project
