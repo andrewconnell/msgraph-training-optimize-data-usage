@@ -1,14 +1,11 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
-// Licensed under the MIT license.
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Microsoft.Identity.Client;
 using Microsoft.Graph;
 using Microsoft.Extensions.Configuration;
 using Helpers;
 
-namespace app
+namespace graphconsoleapp
 {
   class Program
   {
@@ -31,10 +28,10 @@ namespace app
                           .Request()
                           .Select(u => new { u.DisplayName, u.Mail })
                           .Top(15)
+                          // .OrderBy("DisplayName desc)
                           .Filter("startsWith(surname,'A') or startsWith(surname,'B') or startsWith(surname,'C')");
-      var results = graphRequest
-                          .GetAsync()
-                          .Result;
+
+      var results = graphRequest.GetAsync().Result;
       foreach (var user in results)
       {
         Console.WriteLine(user.Id + ": " + user.DisplayName + " <" + user.Mail + ">");
@@ -93,6 +90,5 @@ namespace app
       _graphClient = new GraphServiceClient(authenticationProvider);
       return _graphClient;
     }
-
   }
 }
