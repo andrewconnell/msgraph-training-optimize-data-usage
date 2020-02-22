@@ -1,14 +1,11 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
-// Licensed under the MIT license.
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Microsoft.Identity.Client;
 using Microsoft.Graph;
 using Microsoft.Extensions.Configuration;
 using Helpers;
 
-namespace app
+namespace graphconsoleapp
 {
   class Program
   {
@@ -28,6 +25,7 @@ namespace app
       var client = GetAuthenticatedGraphClient(config);
 
       var graphRequest = client.Groups.Request().Top(5).Expand("members");
+
       var results = graphRequest.GetAsync().Result;
       foreach (var group in results)
       {
@@ -91,6 +89,5 @@ namespace app
       _graphClient = new GraphServiceClient(authenticationProvider);
       return _graphClient;
     }
-
   }
 }
